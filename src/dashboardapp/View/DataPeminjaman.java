@@ -5,9 +5,11 @@
  */
 package dashboardapp.View;
 
+import dashboardapp.Controller.DataPeminjamanController;
 import dashboardapp.View.DataBarang;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -15,28 +17,43 @@ import javax.swing.JTextField;
  * @author KeepToo
  */
 public class DataPeminjaman extends javax.swing.JFrame {
+    private DataPeminjamanController controllerPeminjaman;
 
     public JTextField getHargaBarang() {
-        return hargaBarang;
+        return tglPeminjam;
     }
-
-    public JTextField getKodeBarang() {
-        return kodeBarang;
-    }
-
-   
 
     public JTextField getStok() {
-        return stok;
+        return jumlahPeminjaman;
     }
-    
-    
+
+    public JTable getTabel_peminjam() {
+        return tabel_peminjam;
+    }
+
+    public JTextField getKodePinjam() {
+        return kodePinjam;
+    }
+
+    public JTextField getTglPeminjam() {
+        return tglPeminjam;
+    }
+
+    public JTextField getJumlahPeminjaman() {
+        return jumlahPeminjaman;
+    }
+
+    public JTextField getNamaPeminjam() {
+        return namaPeminjam;
+    }
 
     /**
      * Creates new form Home
      */
     public DataPeminjaman() {
         initComponents();
+        controllerPeminjaman = new DataPeminjamanController();
+        controllerPeminjaman.getData(this);
     }
 
     /**
@@ -73,28 +90,31 @@ public class DataPeminjaman extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_close = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabel_peminjam = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        kodeBarang = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        stok = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        jumlahPeminjaman = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        hargaBarang = new javax.swing.JTextField();
+        tglPeminjam = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        cari = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         update = new javax.swing.JButton();
         reset = new javax.swing.JButton();
         tambah = new javax.swing.JButton();
         hapus = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        kodePinjam = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        namaPeminjam = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        searchcari = new javax.swing.JLabel();
+        cari = new javax.swing.JButton();
+        search = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -443,9 +463,9 @@ public class DataPeminjaman extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(247, 247, 247));
         jScrollPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jTable1.setBackground(new java.awt.Color(247, 247, 247));
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabel_peminjam.setBackground(new java.awt.Color(247, 247, 247));
+        tabel_peminjam.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        tabel_peminjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Tirta", "BK001", "LAPTOP", "1",  new Integer(2000000)},
                 {"Rifki", "BK002", "KOMPUTER", "2",  new Integer(4000000)}
@@ -462,16 +482,16 @@ public class DataPeminjaman extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(247, 247, 247));
-        jTable1.setRowHeight(20);
-        jTable1.setSelectionBackground(new java.awt.Color(96, 83, 150));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("Nama");
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Kode Barang");
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Nama Barang");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Jml Pimnajaman");
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Harga");
+        tabel_peminjam.setGridColor(new java.awt.Color(247, 247, 247));
+        tabel_peminjam.setRowHeight(20);
+        tabel_peminjam.setSelectionBackground(new java.awt.Color(96, 83, 150));
+        jScrollPane1.setViewportView(tabel_peminjam);
+        if (tabel_peminjam.getColumnModel().getColumnCount() > 0) {
+            tabel_peminjam.getColumnModel().getColumn(0).setHeaderValue("Nama");
+            tabel_peminjam.getColumnModel().getColumn(1).setHeaderValue("Kode Barang");
+            tabel_peminjam.getColumnModel().getColumn(2).setHeaderValue("Nama Barang");
+            tabel_peminjam.getColumnModel().getColumn(3).setHeaderValue("Jml Pimnajaman");
+            tabel_peminjam.getColumnModel().getColumn(4).setHeaderValue("Harga");
         }
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 660, 130));
@@ -500,97 +520,55 @@ public class DataPeminjaman extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        kodeBarang.setBackground(new java.awt.Color(31, 70, 144));
-        kodeBarang.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        kodeBarang.setForeground(new java.awt.Color(255, 255, 255));
-        kodeBarang.setBorder(null);
-        kodeBarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kodeBarangActionPerformed(evt);
-            }
-        });
-        jPanel3.add(kodeBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 190, 20));
-
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Kode Barang");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 37));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("___________________________");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 200, 30));
-
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Nama Barang");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 120, 37));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, 37));
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Jml Peminjam ");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 130, 37));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 130, 37));
 
-        stok.setBackground(new java.awt.Color(31, 70, 144));
-        stok.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        stok.setForeground(new java.awt.Color(255, 255, 255));
-        stok.setBorder(null);
-        stok.addActionListener(new java.awt.event.ActionListener() {
+        jumlahPeminjaman.setBackground(new java.awt.Color(31, 70, 144));
+        jumlahPeminjaman.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jumlahPeminjaman.setForeground(new java.awt.Color(255, 255, 255));
+        jumlahPeminjaman.setBorder(null);
+        jumlahPeminjaman.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stokActionPerformed(evt);
+                jumlahPeminjamanActionPerformed(evt);
             }
         });
-        jPanel3.add(stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 190, 20));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("_________________________");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 180, 30));
+        jPanel3.add(jumlahPeminjaman, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 190, 20));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Tgl Peminjam");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 120, 37));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 120, 37));
 
-        hargaBarang.setBackground(new java.awt.Color(31, 70, 144));
-        hargaBarang.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        hargaBarang.setForeground(new java.awt.Color(255, 255, 255));
-        hargaBarang.setBorder(null);
-        hargaBarang.addActionListener(new java.awt.event.ActionListener() {
+        tglPeminjam.setBackground(new java.awt.Color(31, 70, 144));
+        tglPeminjam.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tglPeminjam.setForeground(new java.awt.Color(255, 255, 255));
+        tglPeminjam.setBorder(null);
+        tglPeminjam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hargaBarangActionPerformed(evt);
+                tglPeminjamActionPerformed(evt);
             }
         });
-        jPanel3.add(hargaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 190, 20));
+        jPanel3.add(tglPeminjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 190, 20));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("___________________________");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 200, 30));
-
-        jTextField5.setBackground(new java.awt.Color(31, 70, 144));
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 180, 30));
-
-        cari.setBackground(new java.awt.Color(102, 255, 255));
-        cari.setText("Search");
-        jPanel3.add(cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 200, 30));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("___________________________");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 200, 30));
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 200, 30));
 
         update.setBackground(new java.awt.Color(102, 255, 255));
         update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboardapp/images/rsz_reload.png"))); // NOI18N
@@ -608,6 +586,11 @@ public class DataPeminjaman extends javax.swing.JFrame {
         tambah.setBackground(new java.awt.Color(102, 255, 255));
         tambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboardapp/images/rsz_plus_1.png"))); // NOI18N
         tambah.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tambah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tambahMouseClicked(evt);
+            }
+        });
         tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambahActionPerformed(evt);
@@ -624,9 +607,73 @@ public class DataPeminjaman extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(51, 51, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 180, 30));
+        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 180, 30));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 760, 290));
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Kode Pinjam");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 120, 37));
+
+        kodePinjam.setBackground(new java.awt.Color(31, 70, 144));
+        kodePinjam.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        kodePinjam.setForeground(new java.awt.Color(255, 255, 255));
+        kodePinjam.setBorder(null);
+        kodePinjam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kodePinjamActionPerformed(evt);
+            }
+        });
+        jPanel3.add(kodePinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 190, 20));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("___________________________");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 40, -1, 30));
+
+        namaPeminjam.setBackground(new java.awt.Color(31, 70, 144));
+        namaPeminjam.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        namaPeminjam.setForeground(new java.awt.Color(255, 255, 255));
+        namaPeminjam.setBorder(null);
+        namaPeminjam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaPeminjamActionPerformed(evt);
+            }
+        });
+        jPanel3.add(namaPeminjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 190, 20));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("___________________________");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 200, 30));
+
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Nama Pinjam");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 130, 37));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 760, 290));
+
+        searchcari.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        searchcari.setForeground(new java.awt.Color(255, 255, 255));
+        searchcari.setText("_________________________");
+        jPanel2.add(searchcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 180, 30));
+
+        cari.setBackground(new java.awt.Color(102, 255, 255));
+        cari.setText("Search");
+        jPanel2.add(cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+
+        search.setBackground(new java.awt.Color(31, 70, 144));
+        search.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        search.setForeground(new java.awt.Color(255, 255, 255));
+        search.setBorder(null);
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        jPanel2.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 180, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 780, 530));
 
@@ -751,37 +798,9 @@ public class DataPeminjaman extends javax.swing.JFrame {
         this.setLocation(x-xx,y-xy);
     }//GEN-LAST:event_jPanel2MouseDragged
 
-    private void kodeBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodeBarangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kodeBarangActionPerformed
-
-    private void stokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stokActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stokActionPerformed
-
-    private void hargaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hargaBarangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hargaBarangActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
-       
-    }//GEN-LAST:event_tambahActionPerformed
-
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel15MouseClicked
-
-    private void resetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetMouseClicked
-        // TODO add your handling code here:
-        hargaBarang.setText("");
-        stok.setText("");
-        kodeBarang.setText("");
-       
-    }//GEN-LAST:event_resetMouseClicked
 
     private void Button5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button5MouseClicked
         new About().setVisible(true);
@@ -795,6 +814,43 @@ public class DataPeminjaman extends javax.swing.JFrame {
     private void Button5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button5MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_Button5MouseExited
+
+    private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
+
+    }//GEN-LAST:event_tambahActionPerformed
+
+    private void resetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetMouseClicked
+        // TODO add your handling code here:
+        tglPeminjam.setText("");
+        jumlahPeminjaman.setText("");
+//        kodeBarang.setText("");
+
+    }//GEN-LAST:event_resetMouseClicked
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void tglPeminjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tglPeminjamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tglPeminjamActionPerformed
+
+    private void jumlahPeminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jumlahPeminjamanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jumlahPeminjamanActionPerformed
+
+    private void kodePinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodePinjamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kodePinjamActionPerformed
+
+    private void namaPeminjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaPeminjamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namaPeminjamActionPerformed
+
+    private void tambahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahMouseClicked
+        // TODO add your handling code here:
+        controllerPeminjaman.tambahData(this);
+    }//GEN-LAST:event_tambahMouseClicked
 
     int xx ,xy;
     
@@ -864,7 +920,6 @@ public class DataPeminjaman extends javax.swing.JFrame {
     private javax.swing.JLabel btn_close;
     private javax.swing.JButton cari;
     private javax.swing.JButton hapus;
-    private javax.swing.JTextField hargaBarang;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -874,16 +929,17 @@ public class DataPeminjaman extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -891,12 +947,15 @@ public class DataPeminjaman extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField kodeBarang;
+    private javax.swing.JTextField jumlahPeminjaman;
+    private javax.swing.JTextField kodePinjam;
+    private javax.swing.JTextField namaPeminjam;
     private javax.swing.JButton reset;
-    private javax.swing.JTextField stok;
+    private javax.swing.JTextField search;
+    private javax.swing.JLabel searchcari;
+    private javax.swing.JTable tabel_peminjam;
     private javax.swing.JButton tambah;
+    private javax.swing.JTextField tglPeminjam;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,12 +9,9 @@ package dashboardapp.model;
  *
  * @author LENOVO
  */
-public class peminjamanModel {
-    private String kodeBarang;
-    private String kodePeminjam;
-    private String namaBarang;
-    private int stokPeminjaman;
-    private String tglPinjam;
+public class pengembalianModel {
+    private String kodeBarang, kodePeminjam, namaBarang, tglPengembalian;
+    private int stokBarang;
 
     public String getKodePeminjam() {
         return kodePeminjam;
@@ -40,24 +37,23 @@ public class peminjamanModel {
         this.namaBarang = namaBarang;
     }
 
-    public int getStokPeminjaman() {
-        return stokPeminjaman;
+    public String getTglPengembalian() {
+        return tglPengembalian;
     }
 
-    public void setStokPeminjaman(int stokPeminjaman) {
-        this.stokPeminjaman = stokPeminjaman;
+    public void setTglPengembalian(String tglPengembalian) {
+        this.tglPengembalian = tglPengembalian;
     }
 
-    public String getTglPinjam() {
-        return tglPinjam;
+    public int getStokBarang() {
+        return stokBarang;
     }
 
-    public void setTglPinjam(String tglPinjam) {
-        this.tglPinjam = tglPinjam;
+    public void setStokBarang(int stokBarang) {
+        this.stokBarang = stokBarang;
     }
     
     public void resetForm(){
         
     }
-    
 }

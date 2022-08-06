@@ -10,6 +10,7 @@ import static dashboardapp.Controller.koneksi.stm;
 import dashboardapp.View.LoginPage;
 import dashboardapp.model.loginModel;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -45,9 +46,9 @@ public class loginController {
             try{
                 String sql = "SELECT user.nama,user.password FROM `user` WHERE user.nama='"+username+"' AND user.password='"+password+"'";
                 conn = new koneksi().getConnetion(sql);
-                rs = stm.executeQuery(sql);
+                ResultSet result = stm.executeQuery(sql);
 
-                if(!rs.next()){
+                if(!result.next()){
                     message = "'Username atau Password Yang Anda Masukan Salah'";
                 }
             }catch (SQLException e){

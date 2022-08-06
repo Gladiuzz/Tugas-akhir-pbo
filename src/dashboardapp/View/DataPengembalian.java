@@ -17,25 +17,6 @@ import javax.swing.JTextField;
  */
 public class DataPengembalian extends javax.swing.JFrame {
 
-    public JTextField getHargaBarang() {
-        return hargaBarang;
-    }
-
-    public JTextField getKodeBarang() {
-        return kodeBarang;
-    }
-
-    public JTextField getNamaBarang() {
-        return namaBarang;
-    }
-
-    public JTextField getStok() {
-        return stok;
-    }
-
-
-
-    
     /**
      * Creates new form Home
      */
@@ -84,22 +65,13 @@ public class DataPengembalian extends javax.swing.JFrame {
         kodeBarang = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        namaBarang = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        stok = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        hargaBarang = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         cari = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
         update = new javax.swing.JButton();
         reset = new javax.swing.JButton();
-        tambah = new javax.swing.JButton();
-        hapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -527,57 +499,18 @@ public class DataPengembalian extends javax.swing.JFrame {
                 kodeBarangActionPerformed(evt);
             }
         });
-        jPanel3.add(kodeBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 190, 20));
+        jPanel3.add(kodeBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 190, 10));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Kode Barang");
+        jLabel9.setText("Kode Kembali");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 37));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("___________________________");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 200, 30));
-
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Nama Barang");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 120, 37));
-
-        namaBarang.setBackground(new java.awt.Color(31, 70, 144));
-        namaBarang.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        namaBarang.setForeground(new java.awt.Color(255, 255, 255));
-        namaBarang.setBorder(null);
-        namaBarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namaBarangActionPerformed(evt);
-            }
-        });
-        jPanel3.add(namaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 190, 20));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("___________________________");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 200, 30));
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Stok");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, 37));
-
-        stok.setBackground(new java.awt.Color(31, 70, 144));
-        stok.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        stok.setForeground(new java.awt.Color(255, 255, 255));
-        stok.setBorder(null);
-        stok.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stokActionPerformed(evt);
-            }
-        });
-        jPanel3.add(stok, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 190, 20));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -587,24 +520,13 @@ public class DataPengembalian extends javax.swing.JFrame {
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Harga Barang");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 120, 37));
-
-        hargaBarang.setBackground(new java.awt.Color(31, 70, 144));
-        hargaBarang.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        hargaBarang.setForeground(new java.awt.Color(255, 255, 255));
-        hargaBarang.setBorder(null);
-        hargaBarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hargaBarangActionPerformed(evt);
-            }
-        });
-        jPanel3.add(hargaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 190, 20));
+        jLabel12.setText("Tgl Kembali");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 240, 37));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("___________________________");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 200, 30));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 200, 30));
 
         jTextField5.setBackground(new java.awt.Color(31, 70, 144));
         jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -621,14 +543,9 @@ public class DataPengembalian extends javax.swing.JFrame {
         cari.setText("Search");
         jPanel3.add(cari, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("___________________________");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 200, 30));
-
         update.setBackground(new java.awt.Color(102, 255, 255));
         update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboardapp/images/rsz_reload.png"))); // NOI18N
-        jPanel3.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, 110, 80));
+        jPanel3.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 110, 80));
 
         reset.setBackground(new java.awt.Color(153, 255, 255));
         reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboardapp/images/rsz_loading.png"))); // NOI18N
@@ -637,27 +554,7 @@ public class DataPengembalian extends javax.swing.JFrame {
                 resetMouseClicked(evt);
             }
         });
-        jPanel3.add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 110, 80));
-
-        tambah.setBackground(new java.awt.Color(102, 255, 255));
-        tambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboardapp/images/rsz_plus_1.png"))); // NOI18N
-        tambah.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        tambah.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tambahMouseClicked(evt);
-            }
-        });
-        tambah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tambahActionPerformed(evt);
-            }
-        });
-        jPanel3.add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 110, 80));
-
-        hapus.setBackground(new java.awt.Color(102, 255, 255));
-        hapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboardapp/images/rsz_1trash.png"))); // NOI18N
-        hapus.setToolTipText("");
-        jPanel3.add(hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 110, 80));
+        jPanel3.add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 110, 80));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 760, 290));
 
@@ -817,25 +714,9 @@ public class DataPengembalian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kodeBarangActionPerformed
 
-    private void namaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaBarangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaBarangActionPerformed
-
-    private void stokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stokActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stokActionPerformed
-
-    private void hargaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hargaBarangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hargaBarangActionPerformed
-
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
-       
-    }//GEN-LAST:event_tambahActionPerformed
 
     private void Button5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button5MouseClicked
         // TODO add your handling code here:
@@ -849,22 +730,12 @@ public class DataPengembalian extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button5MouseExited
 
-    private void tambahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tambahMouseClicked
-        // TODO add your handling code here:
-        System.out.println("Cimahi freak");
-    }//GEN-LAST:event_tambahMouseClicked
-
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void resetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetMouseClicked
         // TODO add your handling code here:
-        System.out.println("wwwww");
-        hargaBarang.setText("");
-        stok.setText("");
-        kodeBarang.setText("");
-        namaBarang.setText("");
         
         
     }//GEN-LAST:event_resetMouseClicked
@@ -955,14 +826,9 @@ public class DataPengembalian extends javax.swing.JFrame {
     private javax.swing.JPanel Indicator6;
     private javax.swing.JLabel btn_close;
     private javax.swing.JButton cari;
-    private javax.swing.JButton hapus;
-    private javax.swing.JTextField hargaBarang;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
@@ -972,7 +838,6 @@ public class DataPengembalian extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -986,10 +851,7 @@ public class DataPengembalian extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField kodeBarang;
-    private javax.swing.JTextField namaBarang;
     private javax.swing.JButton reset;
-    private javax.swing.JTextField stok;
-    private javax.swing.JButton tambah;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }
